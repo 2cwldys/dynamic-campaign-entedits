@@ -1,0 +1,68 @@
+if SERVER then
+	hook.Add("InitPostEntity", "MapEntModifications", function()
+		if game.GetMap() == "rp_subterranean" then
+			-- remove all healthkits / healthvials that spawn in the map
+			ents.GetMapCreatedEntity(1254):Remove()
+			ents.GetMapCreatedEntity(1255):Remove()
+			ents.GetMapCreatedEntity(1481):Remove()
+			ents.GetMapCreatedEntity(1585):Remove()
+			ents.GetMapCreatedEntity(1586):Remove()
+			ents.GetMapCreatedEntity(1587):Remove()
+			ents.GetMapCreatedEntity(1588):Remove()
+			ents.GetMapCreatedEntity(1589):Remove()
+			ents.GetMapCreatedEntity(1590):Remove()
+			ents.GetMapCreatedEntity(1591):Remove()
+			ents.GetMapCreatedEntity(1592):Remove()
+			ents.GetMapCreatedEntity(1593):Remove()
+			ents.GetMapCreatedEntity(1594):Remove()
+			ents.GetMapCreatedEntity(1595):Remove()
+			ents.GetMapCreatedEntity(1596):Remove()
+			ents.GetMapCreatedEntity(1597):Remove()
+			ents.GetMapCreatedEntity(1598):Remove()
+			ents.GetMapCreatedEntity(1599):Remove()
+			ents.GetMapCreatedEntity(1600):Remove()
+			ents.GetMapCreatedEntity(1601):Remove()
+			ents.GetMapCreatedEntity(1602):Remove()
+			ents.GetMapCreatedEntity(1603):Remove()
+			ents.GetMapCreatedEntity(1604):Remove()
+			ents.GetMapCreatedEntity(1605):Remove()
+			ents.GetMapCreatedEntity(1606):Remove()
+			ents.GetMapCreatedEntity(1607):Remove()
+			-- fun fact: the map has a crossbow at the bottom of the goo pit too
+			ents.GetMapCreatedEntity(1277):Remove()
+			
+			-- make a little doorway for the 2nd exit
+			local prop1 = ents.Create("prop_dynamic")
+			prop1:SetModel("models/props_c17/door01_left.mdl")
+			prop1:SetPos(Vector(-860.8, -43.1, 308.4))
+			prop1:SetSkin(10)
+			prop1:SetBodygroup(0,1)
+			prop1:Spawn()
+			
+			local prop2 = ents.Create("prop_dynamic")
+			prop2:SetModel("models/hunter/plates/plate3x4.mdl")
+			prop2:SetPos(Vector(-862.1, -18.1, 348.2))
+			prop2:SetAngles(Angle(0, 90, 90))
+			prop2:SetMaterial("models/props_wasteland/wood_fence01a")
+			prop2:Spawn()
+			
+			local prop3 = ents.Create("prop_dynamic")
+			prop3:SetModel("models/hunter/triangles/1x1x3.mdl")
+			prop3:SetPos(Vector(-837.4, -18.1, 391.5))
+			prop3:SetAngles(Angle(0, -90, -90))
+			prop3:SetMaterial("models/props_wasteland/wood_fence01a")
+			prop3:Spawn()
+			
+			local prop4 = ents.Create("prop_dynamic")
+			prop4:SetModel("models/hunter/blocks/cube05x05x05.mdl")
+			prop4:SetPos(Vector(-844.2, -20.7, 393.4))
+			prop4:SetMaterial("models/props_wasteland/wood_fence01a")
+			prop4:Spawn()
+			
+			local prop5 = ents.Create("prop_dynamic")
+			prop5:SetModel("models/props/cs_office/exit_ceiling.mdl")
+			prop5:SetPos(Vector(-841.4, -20.9, 381.8))
+			prop5:Spawn()
+		end
+	end)
+end
